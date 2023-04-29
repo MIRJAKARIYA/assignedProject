@@ -1,9 +1,9 @@
-import product1 from "../assets/products/1.jpg"
-import product2 from "../assets/products/2.jpg"
-import product3 from "../assets/products/3.jpg"
-import product4 from "../assets/products/4.jpg"
-import product5 from "../assets/products/5.jpg"
-import product6 from "../assets/products/6.jpg"
+import product1 from "../assets/products/11.png"
+import product2 from "../assets/products/12.png"
+import product3 from "../assets/products/13.png"
+import product4 from "../assets/products/14.png"
+import product5 from "../assets/products/15.png"
+import product6 from "../assets/products/16.png"
 
 export const popularProducts = [
     {

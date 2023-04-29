@@ -11,12 +11,12 @@ const SingleProduct = ({product}) => {
  const {image,chef,price,name} = product;
   return (
     <Col span={12}>
-        <div style={{ backgroundColor:"#F5F4F1"}}>
+        <div style={{ backgroundColor:"#eceae37c",padding:'10px',borderRadius:"10px"}}>
       <Row>
         <Col span={8}>
           <img
             src={image}
-            style={{ width: "100%",height:"200px", objectFit: "cover" }}
+            style={{ width: "100%",height:"250px", objectFit: "cover" }}
             alt=""
           />
         </Col>

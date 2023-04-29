@@ -29,8 +29,11 @@
 }
 
 .popular-products-container{
-    border: 1px solid red;
-    padding-top: 65px;
+    background-image: url("../../assets/4.png"),url("../../assets/5.png");
+    background-repeat: no-repeat;
+    background-position: 0% 5% ,100% 100%;
+    background-size: 18%, 20%;
+    padding:65px 0 65px 0;
     max-width: 1920px;
     margin: 0 auto;
     width: 100%;

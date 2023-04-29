@@ -135,7 +135,7 @@ const Home = () => {
             Add Coffee <TbMug style={{ color: "black", marginTop: "6px" }} />
           </Button>
         </div>
-        <Row style={{width:"70%", margin:"50px auto 0"}} gutter={[20,20]}>
+        <Row style={{width:"70%", margin:"60px auto 0"}} gutter={[20,20]}>
            
                 {
                   popularProducts.map(product => <SingleProduct product={product}></SingleProduct>)

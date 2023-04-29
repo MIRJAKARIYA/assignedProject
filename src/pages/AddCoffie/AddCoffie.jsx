@@ -4,6 +4,7 @@ const {Paragraph,Title,Text} = Typography;
 import "./AddCoffie.css"
 import {AiOutlineArrowLeft} from "react-icons/ai"
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 const AddCoffie = () => {
@@ -28,7 +29,11 @@ const AddCoffie = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    alert("data added to the db")
+                  Swal.fire({
+                    title: "Yahhh!!!",
+                        text: "Coffee added successfully",
+                        icon: "success",
+                  })
                 })
                  :
 
@@ -41,9 +46,12 @@ const AddCoffie = () => {
               })
                   .then((res) => res.json())
                   .then((data) => {
-                      alert("data updated")
+                    Swal.fire({
+                      title: "Yahhh!!!",
+                        text: "Coffee updated successfully",
+                        icon: "success",
+                    })
                   })
-                  .catch(err =>console.log(err))
 
   };
   return (

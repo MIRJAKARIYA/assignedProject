@@ -12,6 +12,7 @@ import SingleProduct from "../../components/SingleProduct/SingleProduct";
 
 import Instagram from "../../components/Instagram/Instagram";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 //products
 
@@ -51,6 +52,17 @@ const Home = () => {
 
   const deleteCoffee = (id) =>{
     console.log(id)
+
+Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
     fetch(`http://localhost:5000/coffee/${id}`,{
       method:"DELETE",
       headers: {
@@ -61,9 +73,17 @@ const Home = () => {
     .then(data=>{
       const newCoffee = coffee.filter(c=>c._id !== id);
       setCoffee(newCoffee);
-      alert("successfully deleted")
+      
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
     })
-    .catch(err=>console.log(err))
+
+  }
+})
+    
   }
  
 

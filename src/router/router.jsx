@@ -3,6 +3,7 @@ import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import AddCoffie from "../pages/AddCoffie/AddCoffie";
 import CoffeeDetails from "../pages/CoffeeDetails/CoffeeDetails";
+import NotFound from "../pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
                     return fetch(`http://localhost:5000/coffee/${params.coffeeId}`)
                 }
 
+            },
+            {
+                path:"*",
+                element:<NotFound></NotFound>
             }
         ]
     }

@@ -9,6 +9,10 @@ import aromaImg3 from "../../assets/xtra/3.png";
 import aromaImg4 from "../../assets/xtra/4.png";
 import { TbMug } from "react-icons/tb";
 import SingleProduct from "../../components/SingleProduct/SingleProduct";
+import { popularProducts } from "../../utilities/popularProductsData";
+
+//products
+
 
 const Home = () => {
   const aromaData = [
@@ -36,6 +40,9 @@ const Home = () => {
         "Your coffee is brewed by first roasting the green coffee beans",
     },
   ];
+
+ 
+
   return (
     <>
       {/* banner section */}
@@ -128,9 +135,11 @@ const Home = () => {
             Add Coffee <TbMug style={{ color: "black", marginTop: "6px" }} />
           </Button>
         </div>
-        <Row style={{width:"70%", margin:"0 auto"}}>
+        <Row style={{width:"70%", margin:"50px auto 0"}} gutter={[20,20]}>
            
-                <SingleProduct></SingleProduct>
+                {
+                  popularProducts.map(product => <SingleProduct product={product}></SingleProduct>)
+                }
             
 
         </Row>

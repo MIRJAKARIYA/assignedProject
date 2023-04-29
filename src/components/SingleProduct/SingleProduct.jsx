@@ -7,23 +7,24 @@ import {AiFillEye} from "react-icons/ai"
 import {FaPen} from "react-icons/fa"
 import {MdDelete} from "react-icons/md"
 
-const SingleProduct = () => {
+const SingleProduct = ({product}) => {
+ const {image,chef,price,name} = product;
   return (
     <Col span={12}>
-        <div style={{ backgroundColor:"#F5F4F1" }}>
+        <div style={{ backgroundColor:"#F5F4F1"}}>
       <Row>
         <Col span={8}>
           <img
-            src={coffieMub}
-            style={{ width: "100%", objectFit: "cover" }}
+            src={image}
+            style={{ width: "100%",height:"200px", objectFit: "cover" }}
             alt=""
           />
         </Col>
         <Col span={12} style={{ display:"flex",justifyContent:"center",alignItems:"center" }}>
           <div>
-            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)"}}><span style={{fontWeight:"bold"}}>Name:</span> Americano Coffee</Paragraph>
-            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)",marginTop:"-10px"}}><span style={{fontWeight:"bold"}}>Chef:</span> Mr. Matin Paul</Paragraph>
-            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)",marginTop:"-10px"}}><span style={{fontWeight:"bold"}}>Price:</span> 890 Taka</Paragraph>
+            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)"}}><span style={{fontWeight:"bold"}}>Name:</span> {name}</Paragraph>
+            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)",marginTop:"-10px"}}><span style={{fontWeight:"bold"}}>Chef:</span> {chef}</Paragraph>
+            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)",marginTop:"-10px"}}><span style={{fontWeight:"bold"}}>Price:</span> {price}</Paragraph>
           </div>
         </Col>
         <Col style={{ display:"flex",alignItems:"center",justifyContent:"center"}} span={4}>

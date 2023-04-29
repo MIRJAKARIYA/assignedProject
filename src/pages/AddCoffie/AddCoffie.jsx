@@ -20,7 +20,7 @@ const AddCoffie = () => {
         name,details,category,chef,img,supplier,taste
     }
     location.pathname === "/addCoffee"?
-    fetch(`http://localhost:5000/coffee`, {
+    fetch(`https://my-coffie-project.vercel.app/coffee`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const AddCoffie = () => {
                 })
                  :
 
-                 fetch(`http://localhost:5000/coffee/${_id}`, {
+                 fetch(`https://my-coffie-project.vercel.app/coffee/${_id}`, {
                   method: "PUT",
                   headers: {
                       "Content-Type": "application/json",

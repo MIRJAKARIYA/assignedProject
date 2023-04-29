@@ -65,7 +65,7 @@ Swal.fire({
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.isConfirmed) {
-    fetch(`http://localhost:5000/coffee/${id}`,{
+    fetch(`https://my-coffie-project.vercel.app/coffee/${id}`,{
       method:"DELETE",
       headers: {
         "Content-Type": "application/json",

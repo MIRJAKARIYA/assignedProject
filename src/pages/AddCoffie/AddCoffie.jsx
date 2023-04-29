@@ -1,9 +1,14 @@
 import React from "react";
 import { Button, Checkbox, Col, Form, Input, Row,Typography } from "antd";
-const {Paragraph,Title} = Typography;
+const {Paragraph,Title,Text} = Typography;
 import "./AddCoffie.css"
+import {AiOutlineArrowLeft} from "react-icons/ai"
+import { useNavigate } from "react-router-dom";
 
 const AddCoffie = () => {
+
+  const navigate = useNavigate()
+
   const addYourCoffee = (values) => {
     console.log("Received values of form: ", values);
     const {name,details,category,chef,photo,supplier,taste} = values;
@@ -25,7 +30,11 @@ const AddCoffie = () => {
   return (
 
     <>
-    
+    <div>
+    <Button className='back-to-home-button' onClick={()=>navigate("/")}>
+                <AiOutlineArrowLeft style={{color:"black"}}/>
+                <Text style={{fontSize:"30px",fontFamily:"var(--rancho)",marginLeft:"5px"}}>back to home</Text>
+                </Button>
         <div className="add-coffee-container">
         <Title style={{fontFamily:"var(--rancho)",textAlign:"center",marginTop:"30px"}}>Add New Coffee</Title>
         <Paragraph style={{textAlign:"center",width:"80%",margin:"0 auto",marginBottom:"20px"}}>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</Paragraph>
@@ -133,6 +142,7 @@ const AddCoffie = () => {
           </Button>
         </Form.Item>
       </Form>
+    </div>
     </div>
     </>
   );

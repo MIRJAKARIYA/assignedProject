@@ -1,17 +1,23 @@
 import React from 'react';
 import "./CoffeeDetails.css";
-import { useLoaderData } from 'react-router-dom';
-import { Col, Row,Typography } from 'antd';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { Col, Row,Typography,Button } from 'antd';
 const {Paragraph,Text,Title} = Typography;
+import {AiOutlineArrowLeft} from "react-icons/ai"
 
 const CoffeeDetails = () => {
     const {category,chef,details,img,name,price,supplier,taste}= useLoaderData()
-
+    const navigate = useNavigate()
     return (
-        <div className='coffeeDetailsContainer'>
+        <div className='coffie-container-wrapper'>
+            <Button className='back-to-home-button' onClick={()=>navigate("/")}>
+                <AiOutlineArrowLeft style={{color:"black"}}/>
+                <Text style={{fontSize:"30px",fontFamily:"var(--rancho)",marginLeft:"5px"}}>back to home</Text>
+                </Button>
+            <div className='coffeeDetailsContainer'>
             <Row>
                 <Col md={12}>
-                    <img src={img} style={{width:"100%"}} alt="" />
+                    <img src={img} style={{width:"80%",margin:"0 auto",display:"block"}}  alt="" />
                 </Col>
                 <Col md={12} style={{display:"flex",alignItems:"center"}}>
                     <div>
@@ -38,6 +44,7 @@ const CoffeeDetails = () => {
                     </div>
                 </Col>
             </Row>
+        </div>
         </div>
     );
 };

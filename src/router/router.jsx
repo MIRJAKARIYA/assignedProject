@@ -24,6 +24,10 @@ const router = createBrowserRouter([
                 loader:({params})=>{
                     return fetch(`http://localhost:5000/coffee/${params.coffeeId}`)
                 }
+            },
+            {
+                path:"/updateCoffee/:coffeeId",
+                
             }
         ]
     }

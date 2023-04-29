@@ -12,7 +12,7 @@ const SingleProduct = ({deleteCoffee,product}) => {
  const {img,chef,price,name,_id} = product;
  const navigate = useNavigate()
   return (
-    <Col span={12}>
+    <Col md={12}>
         <div style={{ backgroundColor:"#eceae37c",padding:'10px',borderRadius:"10px"}}>
       <Row>
         <Col span={8}>

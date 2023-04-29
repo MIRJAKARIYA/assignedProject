@@ -1,0 +1,37 @@
+.banner-container{
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+    height: 800px;
+}
+.row-style{
+    background-image: url("../../assets/3.png");
+    background-position: 0% 55%;
+    background-size: cover;
+    height: 100%;
+}
+.col-style{
+    display: flex;
+    align-items: center;
+}
+
+
+.aroma-container{
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 300px;
+
+    background-color: #ECEAE3;;
+    display: flex;
+    align-items: center;
+
+}
+
+.popular-products-container{
+    border: 1px solid red;
+    padding-top: 65px;
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+}

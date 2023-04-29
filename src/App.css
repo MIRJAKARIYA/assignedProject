@@ -1,0 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+    --rancho : 'Rancho', cursive;
+    --railway: 'Raleway', sans-serif;
+  }
+  

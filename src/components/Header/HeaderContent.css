@@ -1,0 +1,22 @@
+.header{
+    height: 120px;
+    background-image: url("../../assets/15.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
+}
+
+.header img{
+    width: 75px;
+    height: 90px;
+
+}
+
+.paragraph-style{
+    color: white;
+    font-size: 60px;
+    margin-left: 16px;
+    font-family: var(--rancho);
+}

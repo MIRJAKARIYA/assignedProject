@@ -10,6 +10,7 @@ import insta7 from "../../assets/insta/insta7.png"
 import insta8 from "../../assets/insta/insta8.png"
 import {Typography} from 'antd';
 const { Title, Paragraph, Text } = Typography
+import "./Instagram.css"
 
 const Instagram = () => {
     return (
@@ -18,30 +19,30 @@ const Instagram = () => {
         <Title style={{ textAlign: "center", fontFamily: "var(--rancho)" }}>
         Follow on Instagram
         </Title>
-        <Row style={{width:"70%",margin:"0 auto"}} gutter={[20,20]}>
+        <Row style={{width:"70%",margin:"0 auto"}} gutter={[20,20]} className='insta-img-container'>
             <Col md={6}>
-                <img src={insta1} style={{width:"100%"}} alt="" />
+                <img src={insta1} alt="" />
             </Col>
             <Col md={6}>
-            <img src={insta2} style={{width:"100%"}} alt="" />
+            <img src={insta2} alt="" />
             </Col>
             <Col md={6}>
-            <img src={insta3} style={{width:"100%"}} alt="" />
+            <img src={insta3} alt="" />
             </Col>
             <Col md={6}>
-            <img src={insta4} style={{width:"100%"}} alt="" />
+            <img src={insta4} alt="" />
             </Col>
             <Col md={6}>
-            <img src={insta5} style={{width:"100%"}} alt="" />
+            <img src={insta5} alt="" />
             </Col>
             <Col md={6}>
-            <img src={insta6} style={{width:"100%"}} alt="" />
+            <img src={insta6} alt="" />
             </Col>
             <Col md={6}>
-            <img src={insta7} style={{width:"100%"}} alt="" />
+            <img src={insta7} alt="" />
             </Col>
             <Col md={6}>
-            <img src={insta8} style={{width:"100%"}} alt="" />
+            <img src={insta8} alt="" />
             </Col>
         </Row>
         </div>

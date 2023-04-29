@@ -106,12 +106,8 @@ Swal.fire({
                 Would you like a Cup of Delicious Coffee?
               </Title>
               <Paragraph
-                style={{
-                  color: "white",
-                  fontSize: "16px",
-                  marginTop: "-10px",
-                  fontFamily: "var(--railway)",
-                }}
+              
+                className="coffee-time-para"
               >
                 It's coffee time - Sip & Savor - Relaxation in every sip! Get
                 the nostalgia back!! Your companion of
@@ -123,15 +119,11 @@ Swal.fire({
                 block
                 type="primary"
                 style={{
-                  backgroundColor: "#E3B577",
-                  borderRadius: "0",
+        
                   width: "130px",
                   height: "48px",
-                  fontFamily: "var(--rancho)",
-                  color: "black",
-                  fontSize: "24px",
-                  marginTop: "10px",
                 }}
+                className="learn-more-btn"
               >
                 Learn More
               </Button>
@@ -165,18 +157,12 @@ Swal.fire({
             block
             type="primary"
             onClick={()=>navigate("/addCoffee")}
-            style={{
-              backgroundColor: "#E3B577",
+            style={{  
               width: "130px",
               height: "48px",
-              fontFamily: "var(--rancho)",
-              fontSize: "20px",
-              marginTop: "-8px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              
+  
             }}
+            className="add-coffee-btn"
           >
             Add Coffee <TbMug style={{ color: "black", marginTop: "6px" }} />
           </Button>

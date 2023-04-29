@@ -1,0 +1,25 @@
+.para-style{
+    font-size:20px;
+    font-family:var(--railway)
+}
+
+.icon-style{
+    width:40px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    border-radius:4px
+}
+.single-first-col{
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+
+.single-second-col{
+    display:flex;
+    align-items:center;
+    justify-content:center
+}

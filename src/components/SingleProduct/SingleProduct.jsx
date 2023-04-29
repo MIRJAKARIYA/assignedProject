@@ -1,7 +1,6 @@
 import React from "react";
 import "./SingleProduct.css";
 import { Col, Row, Typography } from "antd";
-import coffieMub from "../../assets/products/1.jpg";
 const { Paragraph } = Typography;
 import {AiFillEye} from "react-icons/ai"
 import {FaPen} from "react-icons/fa"
@@ -22,22 +21,22 @@ const SingleProduct = ({deleteCoffee,product}) => {
             alt=""
           />
         </Col>
-        <Col span={12} style={{ display:"flex",justifyContent:"center",alignItems:"center" }}>
+        <Col className="single-first-col" span={12}>
           <div>
-            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)"}}><span style={{fontWeight:"bold"}}>Name:</span> {name}</Paragraph>
-            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)",marginTop:"-10px"}}><span style={{fontWeight:"bold"}}>Chef:</span> {chef}</Paragraph>
-            <Paragraph style={{fontSize:"20px",fontFamily:"var(--railway)",marginTop:"-10px"}}><span style={{fontWeight:"bold"}}>Price:</span> {price}</Paragraph>
+            <Paragraph className="para-style"><span style={{fontWeight:"bold"}}>Name:</span> {name}</Paragraph>
+            <Paragraph className="para-style" style={{marginTop:"-10px"}}><span style={{fontWeight:"bold"}}>Chef:</span> {chef}</Paragraph>
+            <Paragraph className="para-style" style={{marginTop:"-10px"}}><span style={{fontWeight:"bold"}}>Price:</span> {price}</Paragraph>
           </div>
         </Col>
-        <Col style={{ display:"flex",alignItems:"center",justifyContent:"center"}} span={4}>
+        <Col className="single-second-col" span={4}>
             <div style={{display:"flex",flexDirection:"column"}}>
-            <div onClick={()=>navigate(`/coffeeDetails/${_id}`)} style={{width:"40px",height:"40px",backgroundColor:"#D2B48C",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"20px",color:"white",borderRadius:"4px"}}>
+            <div onClick={()=>navigate(`/coffeeDetails/${_id}`)} style={{backgroundColor:"#D2B48C",fontSize:"20px"}} className="icon-style">
                 <AiFillEye/>
             </div>
-            <div onClick={()=>navigate(`/updateCoffee/${_id}`)} style={{width:"40px",height:"40px",backgroundColor:"#3C393B",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"16px",color:"white",marginTop:"12px",borderRadius:"4px"}}>
+            <div onClick={()=>navigate(`/updateCoffee/${_id}`)} style={{backgroundColor:"#3C393B",fontSize:"16px",marginTop:"12px"}} className="icon-style">
                 <FaPen/>
             </div>
-            <div onClick={()=>deleteCoffee(_id)} style={{width:"40px",height:"40px",backgroundColor:"#EA4744",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"20px",color:"white",marginTop:"12px",borderRadius:"4px"}}>
+            <div onClick={()=>deleteCoffee(_id)} style={{backgroundColor:"#EA4744",fontSize:"20px",marginTop:"12px"}} className="icon-style">
                 <MdDelete/>
             </div>
             </div>

@@ -1,9 +1,15 @@
 .footer-extra-style {
   background-image: url("../../assets/13.jpg");
+  padding: 60px 0;
+  position: relative;
+}
+.footer-extra-style img {
+  width: 75px;
+  height: 90px;
+  margin-left: 15%;
 }
 .end-footer {
   height: 50px;
-
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -14,4 +20,17 @@
   font-family: var(--rancho);
   background-image: url("../../assets//24.jpg");
   color: white;
+}
+.common-footer-part {
+  display: flex;
+  align-items: center;
+  font-family: var(--railway);
+}
+
+.send-message-btn {
+  font-family: var(--rancho);
+  border-radius: 40px;
+  font-size: 20px;
+  height: 50px;
+  margin-bottom: 50px;
 }

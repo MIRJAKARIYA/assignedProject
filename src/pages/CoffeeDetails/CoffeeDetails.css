@@ -1,5 +1,5 @@
-.coffie-container-wrapper{
-  background-image:url("../../assets/11.png");
+.coffie-container-wrapper {
+  background-image: url("../../assets/11.png");
 }
 
 .coffeeDetailsContainer {
@@ -8,20 +8,32 @@
   margin: 50px auto;
   background-color: #e5e3dc;
   padding: 20px 50px;
-
 }
 
-.back-to-home-button{
-  height:55px;
-  font-size:30px;
-  display:flex ;
-  align-items:center;
+.coffeeDetailsContainer img {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+.back-to-home-button {
+  height: 55px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
   margin-left: 15.3%;
   margin-top: 50px;
-  border:0;
+  border: 0;
   box-shadow: none;
   background-color: transparent;
 }
-.back-to-home-button:hover{
-  background-color: #D2B48C;
+.back-to-home-button:hover {
+  background-color: #d2b48c;
+}
+.dts-para {
+  font-family: var(--railway);
+}
+.dts-txt {
+  font-family: var(--railway);
+  font-weight: bold;
 }

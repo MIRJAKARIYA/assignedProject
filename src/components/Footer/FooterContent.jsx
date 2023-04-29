@@ -20,7 +20,7 @@ import React from "react";
 
 const FooterContent = () => {
   return (
-    <Footer style={{ padding: "60px 0",position:"relative" }} className="footer-extra-style">
+    <Footer className="footer-extra-style">
       <img
         src={logo1}
         style={{ width: "75px", height: "90px", marginLeft: "15%" }}
@@ -49,33 +49,29 @@ const FooterContent = () => {
                 Get in Touch
               </Title>
               <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontFamily: "var(--railway)",
-                }}
+                className="common-footer-part"
               >
                 <BsFillTelephoneFill></BsFillTelephoneFill>
                 <span style={{ marginLeft: "10px" }}>+88 01533 333 333</span>
               </div>
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
+
                   marginTop: "5px",
-                  fontFamily: "var(--railway)",
+
                 }}
+                className="common-footer-part"
               >
                 <GrMail></GrMail>
                 <span style={{ marginLeft: "10px" }}>info@gmail.com</span>
               </div>
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
+
                   marginTop: "5px",
-                  fontFamily: "var(--railway)",
+
                 }}
+                className="common-footer-part"
               >
                 <MdLocationOn></MdLocationOn>
                 <span style={{ marginLeft: "10px" }}>
@@ -100,10 +96,10 @@ const FooterContent = () => {
               <TextArea placeholder="Message" rows={5} />
             </Form.Item>
           </div>
-          <Button style={{fontFamily:"var(--rancho)",borderRadius:"40px",fontSize:"20px",height:"50px"}}>Send Message</Button>
+          <Button className="send-message-btn">Send Message</Button>
         </Col>
       </Row>
-      <div style={{}} className="end-footer">Copyright Espresso Emporium ! All Rights Reserved</div>
+      <div className="end-footer">Copyright Espresso Emporium ! All Rights Reserved</div>
     </Footer>
   );
 };

@@ -1,38 +1,20 @@
+import React from 'react';
 import React from "react";
 import { Button, Checkbox, Col, Form, Input, Row,Typography } from "antd";
-const {Paragraph,Title} = Typography;
-import "./AddCoffie.css"
+const {Paragraph} = Typography;
 
-const AddCoffie = () => {
+const UpdateCoffie = () => {
+    const onFinish = (values) => {};
   const addYourCoffee = (values) => {
     console.log("Received values of form: ", values);
-    const {name,details,category,chef,photo,supplier,taste} = values;
-    const coffeeData = {
-        name,details,category,chef,photo,supplier,taste
-    }
-    fetch(`http://localhost:5000/coffee`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(coffeeData),
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    alert("data added to the db")
-                })
   };
-  return (
-
-    <>
-    
+    return (
         <div className="add-coffee-container">
-        <Title style={{fontFamily:"var(--rancho)",textAlign:"center",marginTop:"30px"}}>Add New Coffee</Title>
-        <Paragraph style={{textAlign:"center",width:"80%",margin:"0 auto",marginBottom:"20px"}}>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</Paragraph>
+        
       <Form name="normal_login" className="login-form" onFinish={addYourCoffee}>
         <Row gutter={[30]}>
           <Col md={12}>
-            <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Name</span>
+            <span>Name</span>
             <Form.Item
               name="name"
               rules={[
@@ -44,7 +26,7 @@ const AddCoffie = () => {
             >
               <Input placeholder="Enter coffee name" style={{height:"48px"}} />
             </Form.Item>
-            <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Supplier</span>
+            <span>Supplier</span>
             <Form.Item
               name="supplier"
               rules={[
@@ -56,7 +38,7 @@ const AddCoffie = () => {
             >
               <Input placeholder="Enter coffee supplier" style={{height:"48px"}}/>
             </Form.Item>
-            <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Category</span>
+            <span>Category</span>
             <Form.Item
               name="category"
               rules={[
@@ -70,7 +52,7 @@ const AddCoffie = () => {
             </Form.Item>
           </Col>
           <Col md={12}>
-              <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Chef</span>
+              <span>Chef</span>
           <Form.Item
               name="chef"
               rules={[
@@ -82,7 +64,7 @@ const AddCoffie = () => {
             >
               <Input placeholder="Enter coffee chef" style={{height:"48px"}}/>
             </Form.Item>
-            <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Taste</span>
+            <span>Taste</span>
             <Form.Item
               name="taste"
               rules={[
@@ -94,7 +76,7 @@ const AddCoffie = () => {
             >
               <Input placeholder="Enter coffee taste" style={{height:"48px"}}/>
             </Form.Item>
-            <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Details</span>
+            <span>Details</span>
             <Form.Item
               name="details"
               rules={[
@@ -109,7 +91,7 @@ const AddCoffie = () => {
 
           </Col>
         </Row>
-        <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Photo</span>
+        <span>Photo</span>
         <Form.Item
               name="photo"
               rules={[
@@ -134,8 +116,7 @@ const AddCoffie = () => {
         </Form.Item>
       </Form>
     </div>
-    </>
-  );
+    );
 };
 
-export default AddCoffie;
+export default UpdateCoffie;

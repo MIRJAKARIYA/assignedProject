@@ -11,7 +11,7 @@ import { TbMug } from "react-icons/tb";
 import SingleProduct from "../../components/SingleProduct/SingleProduct";
 
 import Instagram from "../../components/Instagram/Instagram";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 //products
 
@@ -47,6 +47,11 @@ const Home = () => {
 
   const [coffee,setCoffee] = useState(coffeeData);
 
+  const navigate = useNavigate()
+
+  const deleteCoffee = (id) =>{
+
+  }
  
 
   return (
@@ -126,6 +131,7 @@ const Home = () => {
           <Button
             block
             type="primary"
+            onClick={()=>navigate("/addCoffee")}
             style={{
               backgroundColor: "#E3B577",
               width: "130px",
@@ -136,6 +142,7 @@ const Home = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
+              
             }}
           >
             Add Coffee <TbMug style={{ color: "black", marginTop: "6px" }} />

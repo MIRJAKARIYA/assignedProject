@@ -129,9 +129,10 @@ const Home = () => {
           </Button>
         </div>
         <Row style={{width:"70%", margin:"0 auto"}}>
-            <Col span={12}>
+           
                 <SingleProduct></SingleProduct>
-            </Col>
+            
+
         </Row>
       </div>
     </>

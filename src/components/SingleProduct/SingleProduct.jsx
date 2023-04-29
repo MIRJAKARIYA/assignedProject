@@ -9,7 +9,8 @@ import {MdDelete} from "react-icons/md"
 
 const SingleProduct = () => {
   return (
-    <div style={{ backgroundColor:"#F5F4F1" }}>
+    <Col span={12}>
+        <div style={{ backgroundColor:"#F5F4F1" }}>
       <Row>
         <Col span={8}>
           <img
@@ -41,6 +42,7 @@ const SingleProduct = () => {
         </Col>
       </Row>
     </div>
+    </Col>
   );
 };
 

@@ -10,6 +10,7 @@ import aromaImg4 from "../../assets/xtra/4.png";
 import { TbMug } from "react-icons/tb";
 import SingleProduct from "../../components/SingleProduct/SingleProduct";
 import { popularProducts } from "../../utilities/popularProductsData";
+import Instagram from "../../components/Instagram/Instagram";
 
 //products
 
@@ -144,6 +145,14 @@ const Home = () => {
 
         </Row>
       </div>
+
+      {/* instagram images */}
+      <div className="instagram-container">
+       
+            <Instagram></Instagram>
+    
+      </div>
+              
     </>
   );
 };

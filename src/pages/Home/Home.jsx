@@ -50,7 +50,20 @@ const Home = () => {
   const navigate = useNavigate()
 
   const deleteCoffee = (id) =>{
-
+    console.log(id)
+    fetch(`http://localhost:5000/coffee/${id}`,{
+      method:"DELETE",
+      headers: {
+        "Content-Type": "application/json",
+    }
+    })
+    .then(res=> res.json())
+    .then(data=>{
+      const newCoffee = coffee.filter(c=>c._id !== id);
+      setCoffee(newCoffee);
+      alert("successfully deleted")
+    })
+    .catch(err=>console.log(err))
   }
  
 
@@ -150,7 +163,7 @@ const Home = () => {
         </div>
         <Row style={{width:"70%", margin:"0 auto",paddingTop:"50px"}} gutter={[20,20]}>
                 {
-                  coffee.map(product => <SingleProduct product={product}></SingleProduct>)
+                  coffee.map(product => <SingleProduct deleteCoffee={deleteCoffee} product={product}></SingleProduct>)
                 }
         </Row>
       </div>

@@ -3,18 +3,22 @@ import { Button, Checkbox, Col, Form, Input, Row,Typography } from "antd";
 const {Paragraph,Title,Text} = Typography;
 import "./AddCoffie.css"
 import {AiOutlineArrowLeft} from "react-icons/ai"
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+
 
 const AddCoffie = () => {
+  const {name,details,category,chef,img,supplier,taste,_id} = useLoaderData() || {}
 
   const navigate = useNavigate()
+  const location = useLocation()
+
 
   const addYourCoffee = (values) => {
-    console.log("Received values of form: ", values);
-    const {name,details,category,chef,photo,supplier,taste} = values;
+    const {name,details,category,chef,img,supplier,taste} = values;
     const coffeeData = {
-        name,details,category,chef,photo,supplier,taste
+        name,details,category,chef,img,supplier,taste
     }
+    location.pathname === "/addCoffee"?
     fetch(`http://localhost:5000/coffee`, {
                 method: "POST",
                 headers: {
@@ -26,6 +30,21 @@ const AddCoffie = () => {
                 .then((data) => {
                     alert("data added to the db")
                 })
+                 :
+
+                 fetch(`http://localhost:5000/coffee/${_id}`, {
+                  method: "PUT",
+                  headers: {
+                      "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(coffeeData),
+              })
+                  .then((res) => res.json())
+                  .then((data) => {
+                      alert("data updated")
+                  })
+                  .catch(err =>console.log(err))
+
   };
   return (
 
@@ -51,7 +70,7 @@ const AddCoffie = () => {
                 },
               ]}
             >
-              <Input placeholder="Enter coffee name" style={{height:"48px"}} />
+              <Input placeholder={name?name:"Enter coffee name"} style={{height:"48px"}} />
             </Form.Item>
             <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Supplier</span>
             <Form.Item
@@ -63,7 +82,7 @@ const AddCoffie = () => {
                 },
               ]}
             >
-              <Input placeholder="Enter coffee supplier" style={{height:"48px"}}/>
+              <Input placeholder={supplier?supplier:"Enter coffee supplier"} style={{height:"48px"}}/>
             </Form.Item>
             <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Category</span>
             <Form.Item
@@ -75,7 +94,7 @@ const AddCoffie = () => {
                 },
               ]}
             >
-              <Input type="password" placeholder="Enter coffee category" style={{height:"48px"}}/>
+              <Input placeholder={category?category:"Enter coffee category"} style={{height:"48px"}}/>
             </Form.Item>
           </Col>
           <Col md={12}>
@@ -89,7 +108,7 @@ const AddCoffie = () => {
                 },
               ]}
             >
-              <Input placeholder="Enter coffee chef" style={{height:"48px"}}/>
+              <Input placeholder={chef?chef:"Enter coffee chef"} style={{height:"48px"}}/>
             </Form.Item>
             <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Taste</span>
             <Form.Item
@@ -101,7 +120,7 @@ const AddCoffie = () => {
                 },
               ]}
             >
-              <Input placeholder="Enter coffee taste" style={{height:"48px"}}/>
+              <Input placeholder={taste?taste:"Enter coffee taste"} style={{height:"48px"}}/>
             </Form.Item>
             <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Details</span>
             <Form.Item
@@ -113,14 +132,14 @@ const AddCoffie = () => {
                 },
               ]}
             >
-              <Input placeholder="Enter coffee details" style={{height:"48px"}}/>
+              <Input placeholder={details?details:"Enter coffee details"} style={{height:"48px"}}/>
             </Form.Item>
 
           </Col>
         </Row>
         <span style={{fontWeight:"bold",fontFamily:"var(--railway)"}}>Photo</span>
         <Form.Item
-              name="photo"
+              name="img"
               rules={[
                 {
                   required: true,
@@ -128,7 +147,7 @@ const AddCoffie = () => {
                 },
               ]}
             >
-              <Input placeholder="Enter coffee photo" style={{height:"48px"}}/>
+              <Input placeholder={img?img:"Enter coffee photo"} style={{height:"48px"}}/>
             </Form.Item>
         <Form.Item>
           <Button

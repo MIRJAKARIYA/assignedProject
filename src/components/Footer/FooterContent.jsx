@@ -1,0 +1,111 @@
+import { Button, Col, Row } from "antd";
+import { Layout, Typography } from "antd";
+const { Footer } = Layout;
+const { Title, Paragraph } = Typography;
+import logo1 from "../../assets/logo1.png";
+import {
+  BsFacebook,
+  BsTwitter,
+  BsInstagram,
+  BsLinkedin,
+  BsFillTelephoneFill,
+} from "react-icons/bs";
+import { GrMail } from "react-icons/gr";
+import { MdLocationOn } from "react-icons/md";
+import { Form, Input } from "antd";
+import "./FooterContent.css";
+const { TextArea } = Input;
+
+import React from "react";
+
+const FooterContent = () => {
+  return (
+    <Footer style={{ padding: "60px 0",position:"relative" }} className="footer-extra-style">
+      <img
+        src={logo1}
+        style={{ width: "75px", height: "90px", marginLeft: "15%" }}
+        alt=""
+      />
+      <Row style={{ width: "70%", margin: "0 auto" }} gutter={[20, 20]}>
+        <Col md={12}>
+          <div>
+            <Title style={{ fontFamily: "var(--rancho)" }}>
+              Espresso Emporium
+            </Title>
+
+            <Paragraph style={{ fontFamily: "var(--railway)" }}>
+              Always ready to be your friend. Come & Contact with us to share
+              your memorable
+              <br /> moments, to share with your best companion.
+            </Paragraph>
+            <div style={{ fontSize: "30px" }}>
+              <BsFacebook></BsFacebook>
+              <BsTwitter style={{ marginLeft: "20px" }}></BsTwitter>
+              <BsInstagram style={{ marginLeft: "20px" }}></BsInstagram>
+              <BsLinkedin style={{ marginLeft: "20px" }}></BsLinkedin>
+            </div>
+            <div>
+              <Title style={{ fontFamily: "var(--rancho)", marginTop: "10px" }}>
+                Get in Touch
+              </Title>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  fontFamily: "var(--railway)",
+                }}
+              >
+                <BsFillTelephoneFill></BsFillTelephoneFill>
+                <span style={{ marginLeft: "10px" }}>+88 01533 333 333</span>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginTop: "5px",
+                  fontFamily: "var(--railway)",
+                }}
+              >
+                <GrMail></GrMail>
+                <span style={{ marginLeft: "10px" }}>info@gmail.com</span>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginTop: "5px",
+                  fontFamily: "var(--railway)",
+                }}
+              >
+                <MdLocationOn></MdLocationOn>
+                <span style={{ marginLeft: "10px" }}>
+                  72, Wall street, King Road, Dhaka
+                </span>
+              </div>
+            </div>
+          </div>
+        </Col>
+        <Col md={12}>
+          <div>
+            <Title style={{ fontFamily: "var(--rancho)" }}>
+              Connect with Us
+            </Title>
+            <Form.Item>
+              <Input placeholder="Name" style={{ height: "50px" }} />
+            </Form.Item>
+            <Form.Item>
+              <Input placeholder="Email" style={{ height: "50px" }} />
+            </Form.Item>
+            <Form.Item>
+              <TextArea placeholder="Message" rows={5} />
+            </Form.Item>
+          </div>
+          <Button style={{fontFamily:"var(--rancho)",borderRadius:"40px",fontSize:"20px",height:"50px"}}>Send Message</Button>
+        </Col>
+      </Row>
+      <div style={{}} className="end-footer">Copyright Espresso Emporium ! All Rights Reserved</div>
+    </Footer>
+  );
+};
+
+export default FooterContent;

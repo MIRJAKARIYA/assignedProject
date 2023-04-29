@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row, Typography, Button } from "antd";
 const { Title, Paragraph, Text } = Typography;
 import "./Home.css";
@@ -9,8 +9,9 @@ import aromaImg3 from "../../assets/xtra/3.png";
 import aromaImg4 from "../../assets/xtra/4.png";
 import { TbMug } from "react-icons/tb";
 import SingleProduct from "../../components/SingleProduct/SingleProduct";
-import { popularProducts } from "../../utilities/popularProductsData";
+
 import Instagram from "../../components/Instagram/Instagram";
+import { useLoaderData } from "react-router-dom";
 
 //products
 
@@ -41,6 +42,10 @@ const Home = () => {
         "Your coffee is brewed by first roasting the green coffee beans",
     },
   ];
+
+  const coffeeData = useLoaderData()
+
+  const [coffee,setCoffee] = useState(coffeeData);
 
  
 
@@ -114,7 +119,7 @@ const Home = () => {
       {/* popular products section */}
       <div className="popular-products-container">
         <p style={{ textAlign: "center" }}>--- Sip & Savor ---</p>
-        <Title style={{ textAlign: "center", fontFamily: "rancho" }}>
+        <Title style={{ textAlign: "center", fontFamily: "var(--rancho)" }}>
           Our Popular Products
         </Title>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -136,19 +141,16 @@ const Home = () => {
             Add Coffee <TbMug style={{ color: "black", marginTop: "6px" }} />
           </Button>
         </div>
-        <Row style={{width:"70%", margin:"60px auto 0"}} gutter={[20,20]}>
-           
+        <Row style={{width:"70%", margin:"0 auto",paddingTop:"50px"}} gutter={[20,20]}>
                 {
-                  popularProducts.map(product => <SingleProduct product={product}></SingleProduct>)
+                  coffee.map(product => <SingleProduct product={product}></SingleProduct>)
                 }
-            
-
         </Row>
       </div>
 
       {/* instagram images */}
       <div className="instagram-container">
-       
+                
             <Instagram></Instagram>
     
       </div>

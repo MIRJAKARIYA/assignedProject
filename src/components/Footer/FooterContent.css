@@ -1,0 +1,17 @@
+.footer-extra-style {
+  background-image: url("../../assets/13.jpg");
+}
+.end-footer {
+  height: 50px;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: var(--rancho);
+  background-image: url("../../assets//24.jpg");
+  color: white;
+}

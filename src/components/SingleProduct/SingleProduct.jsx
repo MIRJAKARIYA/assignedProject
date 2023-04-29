@@ -8,14 +8,14 @@ import {FaPen} from "react-icons/fa"
 import {MdDelete} from "react-icons/md"
 
 const SingleProduct = ({product}) => {
- const {image,chef,price,name} = product;
+ const {img,chef,price,name} = product;
   return (
     <Col span={12}>
         <div style={{ backgroundColor:"#eceae37c",padding:'10px',borderRadius:"10px"}}>
       <Row>
         <Col span={8}>
           <img
-            src={image}
+            src={img}
             style={{ width: "100%",height:"250px", objectFit: "cover" }}
             alt=""
           />

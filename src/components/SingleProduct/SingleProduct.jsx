@@ -6,9 +6,11 @@ const { Paragraph } = Typography;
 import {AiFillEye} from "react-icons/ai"
 import {FaPen} from "react-icons/fa"
 import {MdDelete} from "react-icons/md"
+import { useNavigate } from "react-router-dom";
 
 const SingleProduct = ({product}) => {
- const {img,chef,price,name} = product;
+ const {img,chef,price,name,_id} = product;
+ const navigate = useNavigate()
   return (
     <Col span={12}>
         <div style={{ backgroundColor:"#eceae37c",padding:'10px',borderRadius:"10px"}}>
@@ -29,7 +31,7 @@ const SingleProduct = ({product}) => {
         </Col>
         <Col style={{ display:"flex",alignItems:"center",justifyContent:"center"}} span={4}>
             <div style={{display:"flex",flexDirection:"column"}}>
-            <div style={{width:"40px",height:"40px",backgroundColor:"#D2B48C",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"20px",color:"white",borderRadius:"4px"}}>
+            <div onClick={()=>navigate(`/coffeeDetails/${_id}`)} style={{width:"40px",height:"40px",backgroundColor:"#D2B48C",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"20px",color:"white",borderRadius:"4px"}}>
                 <AiFillEye/>
             </div>
             <div style={{width:"40px",height:"40px",backgroundColor:"#3C393B",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"16px",color:"white",marginTop:"12px",borderRadius:"4px"}}>

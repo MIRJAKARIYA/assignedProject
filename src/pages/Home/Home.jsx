@@ -49,6 +49,8 @@ const Home = () => {
   const [coffee,setCoffee] = useState(coffeeData);
 
   const navigate = useNavigate()
+  
+  const [hover,setHover] = useState(false)
 
   const deleteCoffee = (id) =>{
     console.log(id)
@@ -116,12 +118,14 @@ Swal.fire({
               </Paragraph>
 
               <Button
+              onMouseEnter={()=>setHover(true)}
+              onMouseLeave={()=>setHover(false)}
                 block
-                type="primary"
                 style={{
-        
                   width: "130px",
                   height: "48px",
+                  color: hover?"white":"black",
+                  border:hover?"2px solid white":"0"
                 }}
                 className="learn-more-btn"
               >
@@ -157,9 +161,12 @@ Swal.fire({
             block
             type="primary"
             onClick={()=>navigate("/addCoffee")}
+            onMouseEnter={()=>setHover("true")}
+            onMouseLeave={()=>setHover(false)}
             style={{  
               width: "130px",
               height: "48px",
+              backgroundColor:hover?"#F5F4F1":"#e3b577"
   
             }}
             className="add-coffee-btn"

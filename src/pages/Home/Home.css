@@ -57,9 +57,12 @@
   background-color: #e3b577;
   border-radius: 0;
   font-family: var(--rancho);
-  color: black;
   font-size: 24px;
   margin-top: 10px;
+  border: 0;
+}
+.learn-more-btn:hover{
+  background-color: transparent;
 }
 .coffee-time-para {
   color: white;

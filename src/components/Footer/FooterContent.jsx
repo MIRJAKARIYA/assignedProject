@@ -16,9 +16,10 @@ import { Form, Input } from "antd";
 import "./FooterContent.css";
 const { TextArea } = Input;
 
-import React from "react";
+import React, { useState } from "react";
 
 const FooterContent = () => {
+  const [hover,setHover] = useState(false);
   return (
     <Footer className="footer-extra-style">
       <img
@@ -87,13 +88,13 @@ const FooterContent = () => {
               Connect with Us
             </Title>
             <Form.Item>
-              <Input placeholder="Name" style={{ height: "50px" }} />
+              <Input placeholder="Name" style={{ height: "50px"}} className="input-field-footer" />
             </Form.Item>
             <Form.Item>
-              <Input placeholder="Email" style={{ height: "50px" }} />
+              <Input placeholder="Email" style={{ height: "50px" }} className="input-field-footer" />
             </Form.Item>
             <Form.Item>
-              <TextArea placeholder="Message" rows={5} />
+              <TextArea placeholder="Message" rows={5} className="input-field-footer" />
             </Form.Item>
           </div>
           <Button className="send-message-btn">Send Message</Button>
